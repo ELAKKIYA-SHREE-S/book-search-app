@@ -14,6 +14,7 @@
 
 .brand-and-toggler {
   width: 100%;
+  margin-left: -160px;
 }
 
 .navbar-content {
@@ -85,7 +86,7 @@
 }
 
 .nav-link:hover {
-  color: var(--purple-color);
+  color: #CC00FF;
 }
 
 /* Media query for smaller screens */

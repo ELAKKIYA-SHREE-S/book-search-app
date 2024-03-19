@@ -28,10 +28,7 @@ const Navbar = () => {
         <div className={`navbar-collapse ${toggleMenu ? 'show-navbar-collapse' : ''}`}>
           <ul className='navbar-nav'>
             <li className='nav-item'>
-              <Link to="book" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1' onClick={closeNavbar}>Home</Link>
-            </li>
-            <li className='nav-item'>
-              <Link to="about" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1' onClick={closeNavbar}>About</Link>
+              <Link to="/" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1' onClick={closeNavbar}>Home</Link>
             </li>
           </ul>
         </div>

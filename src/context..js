@@ -4,12 +4,18 @@ const URL = "https://openlibrary.org/search.json?title=";
 const AppContext = React.createContext();
 
 const AppProvider = ({children}) => {
-    const [searchTerm, setSearchTerm] = useState("the lost world");
+    const [searchTerm, setSearchTerm] = useState("");
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [resultTitle, setResultTitle] = useState("");
 
     const fetchBooks = useCallback(async() => {
+        if (!searchTerm) {
+            setBooks([]);
+            setResultTitle(<span style={{ color: '#CC00FF' }}>Please enter something to explore ...</span>);
+            setLoading(false);
+            return; // Exit the function if the search term is empty
+        }
         setLoading(true);
         try{
             const response = await fetch(`${URL}${searchTerm}`);
